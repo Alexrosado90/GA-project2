@@ -9,12 +9,12 @@
 </div>
 <div class="my-bills">
 <% bill.forEach(bill => { %>
-  <li> Rent: <%= bill.rent %> </li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  
+  <li>Rent: <%= bill.rent %> </li>
+  <li>Electric: <%= bill.electric %></li>
+  <li>Car: <%= bill.car %></li>
+  <li>Insurance: <%= bill.insurance %></li>
+  <li>Food: <%= bill.food %></li>
+  <li>Other: <%= bill.other %>s</li>
   
  <% }) %>
 

@@ -20,16 +20,18 @@ app.listen(port, function(){
 });
 
 app.get('/', (req, res) => {
+    Promise.all([
     People.all()
     .then(person => {
-        res.render('homepage', {person: person})
-    })
-})
-
-app.get('/', (req, res) => {
+    return person
+    }),
     Bills.all()
     .then(bill => {
-        res.render('homepage', {bill: bill})
+        return bill
+    })
+    ])
+    .then(([person, bill]) => {
+        res.render('homepage', {person: person, bill: bill})
     })
 })
 
