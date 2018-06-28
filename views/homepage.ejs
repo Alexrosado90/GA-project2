@@ -1,6 +1,10 @@
-Welcome!! this is a test :)
+<% include ./partials/header %>
 
+<h1> Track your bills here! </h1>
 
+<div class='my-bills'>
 <% person.forEach(person => { %> 
-    <li class='names'> <%= person.name %> </li>
+ <h2> <%= person.name %> </h2>
    <% }) %>
+
+</div>
