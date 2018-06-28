@@ -8,4 +8,10 @@ Bills.all = post => {
     )
 }
 
+Bills.findById = id => {
+    return db.one(
+        "SELECT * FROM bills WHERE id = $<id>", {id: id}
+    )
+} 
+
 module.exports = Bills

@@ -25,3 +25,35 @@ app.get('/', (req, res) => {
         res.render('homepage', {person: person})
     })
 })
+
+//app.get('/people/show', (req, res) => {
+    //People.all()
+    //.then(person => {
+        //res.render('people/show', {person: person})
+    //})
+//})
+
+app.get('/bills/new', (req, res) => {
+    Bills.all()
+    .then(bill => {
+        res.render('bills/new', {bill: bill})
+    })
+})
+
+app.get('/bills/:id/edit', (req, res) => {
+    const id = Number(req.params.id)
+    Promise.all([
+        Bills.findById(id)
+        .then(bill => {
+            return bill
+        }),
+        People.all()
+        .then(person => {
+            return person
+        })
+    ])
+    .then(([person, bill]) => {
+        res.render('bills/edit', {bill: bill, person: person})
+    })
+
+})

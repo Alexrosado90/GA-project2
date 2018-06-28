@@ -2,7 +2,7 @@ const db = require('../db/connection')
 
 const People = {}
 
-People.all = () => {
+People.all = person => {
     return db.any(
         "SELECT * FROM people"
     )
