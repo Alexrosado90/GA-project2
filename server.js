@@ -65,3 +65,19 @@ app.post('/bills', (req, res) => {
         res.redirect(302, `/`)
     })
 })
+
+app.put('/bills/:id', (req,res) => {
+    const updateBill = req.body
+    updateBill.id = req.params.id
+    Bills.update(updateBill).then(bill => {
+        res.redirect(302, `/bills/${bill.id}`)
+    })
+})
+
+app.delete('/bills/:id', (req,res) => {
+    const id = Number(req.params.id)
+    Bills.delete(id).then(bill => {
+        res.redirect(302, '/')
+    })
+})
+

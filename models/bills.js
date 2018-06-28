@@ -21,4 +21,17 @@ Bills.create = bill => {
     )
 }
 
+Bills.update = bill => {
+    return db.one(
+        "UPDATE bills SET people_id = $<people_id>, rent = $<rent>, electric = $<electric>, car = $<car>, insurance = $<insurance>, food = $<food>, other = $<other> WHERE id = $<id> RETURNING *",
+        bill
+    )
+}
+
+Bills.delete = id => {
+    return db.result( 
+        "DELETE FROM bills WHERE id = $<id>", {id: id}
+    )
+}
+
 module.exports = Bills
