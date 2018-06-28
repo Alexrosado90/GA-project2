@@ -18,3 +18,10 @@ app.use('/public', express.static('public'))
 app.listen(port, function(){
   console.log(`Listening on port ${port}`)
 });
+
+app.get('/', (req, res) => {
+    People.all()
+    .then(person => {
+        res.render('homepage', {person: person})
+    })
+})
