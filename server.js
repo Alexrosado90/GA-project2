@@ -26,12 +26,12 @@ app.get('/', (req, res) => {
     })
 })
 
-//app.get('/people/show', (req, res) => {
-    //People.all()
-    //.then(person => {
-        //res.render('people/show', {person: person})
-    //})
-//})
+app.get('/', (req, res) => {
+    Bills.all()
+    .then(bill => {
+        res.render('homepage', {bill: bill})
+    })
+})
 
 app.get('/bills/new', (req, res) => {
     Bills.all()
@@ -55,5 +55,11 @@ app.get('/bills/:id/edit', (req, res) => {
     .then(([person, bill]) => {
         res.render('bills/edit', {bill: bill, person: person})
     })
+})
 
+app.post('/bills', (req, res) => {
+    const newBill = req.body
+    Bills.create(newBill).then(bill => {
+        res.redirect(302, `/`)
+    })
 })

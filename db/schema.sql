@@ -14,7 +14,7 @@ CREATE TABLE people (
 
 CREATE TABLE bills (
     id SERIAL PRIMARY KEY,
-    person_id INTEGER REFERENCES people(id),
+    people_id INTEGER REFERENCES people(id),
     rent INTEGER,
     electric INTEGER,
     car INTEGER,

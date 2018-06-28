@@ -2,9 +2,20 @@
 
 <h1> Track your bills here! </h1>
 
-<div class='my-bills'>
+<div class='name'>
 <% person.forEach(person => { %> 
  <h2> <%= person.name %> </h2>
    <% }) %>
-
 </div>
+<div class="my-bills">
+<% bill.forEach(bill => { %>
+  <li> Rent: <%= bill.rent %> </li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  
+  
+ <% }) %>
+
+ </div>
