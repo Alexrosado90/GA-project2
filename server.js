@@ -42,6 +42,23 @@ app.get('/bills/new', (req, res) => {
     })
 })
 
+app.get('/bills/:id', (req, res) => {
+    const id = Number(req.params.id)
+    Promise.all([
+        Bills.findById(id)
+        .then(bill => {
+            return bill
+        }),
+        People.all()
+        .then(person => {
+            return person
+        })
+    ])
+    .then(([bill, person]) => {
+        res.render('bills/show', {bill: bill, person: person})
+    })
+})
+
 app.get('/bills/:id/edit', (req, res) => {
     const id = Number(req.params.id)
     Promise.all([
@@ -54,7 +71,8 @@ app.get('/bills/:id/edit', (req, res) => {
             return person
         })
     ])
-    .then(([person, bill]) => {
+    .then(([bill, person]) => {
+        console.log('this is bill ', bill)
         res.render('bills/edit', {bill: bill, person: person})
     })
 })
@@ -67,9 +85,11 @@ app.post('/bills', (req, res) => {
 })
 
 app.put('/bills/:id', (req,res) => {
-    const updateBill = req.body
-    updateBill.id = req.params.id
-    Bills.update(updateBill).then(bill => {
+    const updatedBill = req.body
+    const id = Number(req.params.id)
+    updatedBill.id = id
+    Bills.update(updatedBill).then(bill => {
+        // res.redirect(302, `/bills/${bill.id}`)
         res.redirect(302, `/`)
     })
 })

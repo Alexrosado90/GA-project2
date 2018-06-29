@@ -5,18 +5,19 @@
 <form action="/bills" method="POST">
 <label>Name</label>
 <input type="number" name="person_id" />
-<label>Rent</label>
-<input type="number"name="rent" />
-<label>Electric</label>
-<input type="number" name="electric" />
-<label>Car</label>
-<input type="number" name="car" />
-<label>Insurance</label>
-<input type="number" name="insurance" />
-<label>Food</label>
-<input type="number" name="food" />
-<label>Other</label>
-<input type="number" name="other" />
+
+<input type="text" name="rent" placeholder='Rent' value='<%= bill.rent %>'/> </br>
+
+<input type="number" name="electric" placeholder='Electric' value='<%= bill.electric %>'/>
+
+<input type="number" name="car" placeholder='Car' value='<%= bill.electric %>'/>
+
+<input type="number" name="insurance" placeholder='Insurance' value='<%= bill.insurance %>'/>
+
+<input type="number" name="food" placeholder='Food' value='<%= bill.food %>'/>
+
+<input type="number" name="other" placeholder='Other' value='<%= bill.other %>'/>
+
 <button type="submit">Enter bills</button>
 </form>
 </div>

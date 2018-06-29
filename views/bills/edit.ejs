@@ -2,24 +2,35 @@
 
 <h2> Make changes here </h2>
 <div class="bill-container">
-<form action="/ <%= bill.id %>?_method=PUT" method="POST">
-<label>Name</label>
-<input type="number" name="person_id" />
-<label>Rent</label>
-<input type="number"name="rent" />
-<label>Electric</label>
-<input type="number" name="electric" />
-<label>Car</label>
-<input type="number" name="car" />
-<label>Insurance</label>
-<input type="number" name="insurance" />
-<label>Food</label>
-<input type="number" name="food" />
-<label>Other</label>
-<input type="number" name="other" />
+<p> this is the bill id <%= bill.id %></p>
+
+<form action="/bills/ <%= bill.id %>?_method=PUT" method="POST"> </br>
+
+<label for="people_id">
+Name <select name="people_id" type="text">
+     <option value = '1'>Alex</option>
+</select>
+</label></br>
+
+<input type="text" name="rent" placeholder='Rent' value='<%= bill.rent %>'/> </br>
+
+<input type="text" name="electric" placeholder='Electric' value='<%= bill.electric %>'/> </br>
+
+<input type="text" name="car" placeholder='Car' value='<%= bill.electric %>'/> </br>
+
+<input type="text" name="insurance" placeholder='Insurance' value='<%= bill.insurance %>'/> </br>
+
+<input type="text" name="food" placeholder='Food' value='<%= bill.food %>'/> </br>
+
+<input type="text" name="other" placeholder='Other' value='<%= bill.other %>'/> </br>
+
+
+
 <button type="submit">Update</button>
+
 </form>
 </div>
 
 </body>
 </html>
+
