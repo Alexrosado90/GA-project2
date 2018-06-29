@@ -70,7 +70,7 @@ app.put('/bills/:id', (req,res) => {
     const updateBill = req.body
     updateBill.id = req.params.id
     Bills.update(updateBill).then(bill => {
-        res.redirect(302, `/bills/${bill.id}`)
+        res.redirect(302, `/`)
     })
 })
 

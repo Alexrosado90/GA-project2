@@ -9,12 +9,18 @@
 </div>
 <div class="my-bills">
 <% bill.forEach(bill => { %>
+<form action="/bills/<%= bill.id %>/edit" method="GET">
+<button type="submit">Edit</button>
   <li>Rent: <%= bill.rent %> </li>
   <li>Electric: <%= bill.electric %></li>
   <li>Car: <%= bill.car %></li>
   <li>Insurance: <%= bill.insurance %></li>
   <li>Food: <%= bill.food %></li>
   <li>Other: <%= bill.other %>s</li>
+  </form>
+  <form action="/bills/<%= bill.id %>/?_method=DELETE" method="POST">
+  <button type="submit">Delete</button>
+  </form>
   
  <% }) %>
 
