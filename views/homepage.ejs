@@ -4,24 +4,44 @@
 
 <div class='name'>
 <% person.forEach(person => { %> 
- <h2> <%= person.name %> </h2>
+ <h2> <%= person.name %>, Monthly income: <%=person.monthly_income%> </h2>
    <% }) %>
 </div>
-<div class="my-bills">
+<table class="table">
 <% bill.forEach(bill => { %>
 <form action="/bills/<%= bill.id %>/edit" method="GET">
-<button type="submit">Edit</button>
-  <li>Rent: <%= bill.rent %> </li>
-  <li>Electric: <%= bill.electric %></li>
-  <li>Car: <%= bill.car %></li>
-  <li>Insurance: <%= bill.insurance %></li>
-  <li>Food: <%= bill.food %></li>
-  <li>Other: <%= bill.other %></li>
+<button class="edit" type="submit">Edit</button>
+  <head>
+  <tr>
+  <th>Expense</th>
+  <th>Amount</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>Rent</td> <td> <%=bill.rent %> </td>
+  </tr>
+  <tr>
+  <td>Electric</td> <td> <%=bill.electric %> </td>
+  </tr>
+  <tr>
+  <td>Car</td> <td> <%=bill.car %> </td>
+  </tr>
+  <tr>
+  <td>Inurance</td> <td> <%=bill.insurance %> </td>
+  </tr>
+  <tr>
+  <td>Food</td> <td> <%=bill.food %> </td>
+  </tr>
+  <tr>
+  <td>Other</td> <td> <%=bill.other %> </td>
+  </tr>
+  </tbody>
   </form>
   <form action="/bills/<%= bill.id %>/?_method=DELETE" method="POST">
-  <button type="submit">Delete</button>
+  <button class="delete" type="submit">Delete</button>
   </form>
   
  <% }) %>
 
- </div>
+ </table>
