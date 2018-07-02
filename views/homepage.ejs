@@ -1,47 +1,49 @@
 <% include ./partials/header %>
 
-<h1> Track your bills here! </h1>
+<h1 style="color:white;background-color:black;"> Track your bills here! </h1>
 
 <div class='name'>
 <% person.forEach(person => { %> 
- <h2> <%= person.name %>, Monthly income: <%=person.monthly_income%> </h2>
+ <h2> <%= person.name %>, Monthly income: $<%=person.monthly_income%> </h2>
    <% }) %>
 </div>
-<table class="table">
+<table style="width:25%" class="table">
 <% bill.forEach(bill => { %>
 <form action="/bills/<%= bill.id %>/edit" method="GET">
-<button class="edit" type="submit">Edit</button>
-  <head>
+  <thead>
   <tr>
   <th>Expense</th>
   <th>Amount</th>
+  <th> <form action="/bills/<%= bill.id %>/edit" method="GET">
+<button id="edit" type="submit">Edit</button> </th> </form>
+  <th> <form action="/bills/<%= bill.id %>/?_method=DELETE" method="POST">
+  <button id="delete" type="submit">Delete</button>
+  </form> </th>
   </tr>
   </thead>
   <tbody>
   <tr>
-  <td>Rent</td> <td> <%=bill.rent %> </td>
+  <td>Rent:</td> <td> $<%=bill.rent %> </td>
   </tr>
   <tr>
-  <td>Electric</td> <td> <%=bill.electric %> </td>
+  <td>Electric:</td> <td> $<%=bill.electric %> </td>
   </tr>
   <tr>
-  <td>Car</td> <td> <%=bill.car %> </td>
+  <td>Car:</td> <td> $<%=bill.car %> </td>
   </tr>
   <tr>
-  <td>Inurance</td> <td> <%=bill.insurance %> </td>
+  <td>Inurance:</td> <td> $<%=bill.insurance %> </td>
   </tr>
   <tr>
-  <td>Food</td> <td> <%=bill.food %> </td>
+  <td>Food:</td> <td> $<%=bill.food %> </td>
   </tr>
   <tr>
-  <td>Other</td> <td> <%=bill.other %> </td>
+  <td>Other:</td> <td> $<%=bill.other %> </td>
   </tr>
   </tbody>
-  </form>
-  <form action="/bills/<%= bill.id %>/?_method=DELETE" method="POST">
-  <button class="delete" type="submit">Delete</button>
-  </form>
   
  <% }) %>
 
  </table>
+
+ 

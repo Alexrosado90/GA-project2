@@ -1,17 +1,20 @@
+header {
+    background-color: black;
+}
+
 body {
+    background-color: black; 
+    /*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb9DqhXznhqjqQzD-xigu2eHMKUW6YuuugrOrIo-gebvYFsy8l");
+    background-size: 100%;*/
+}
 
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb9DqhXznhqjqQzD-xigu2eHMKUW6YuuugrOrIo-gebvYFsy8l");
-    
-    background-size: 100%;
-}
-ul {
-    
-    text-decoration: none;
-}
-li {
-    text-decoration: none;
 
+
+.name {
+    color: white;
+    background-color: black;
 }
+
 
 .budget {
     width: 700px;
@@ -19,40 +22,87 @@ li {
 }
 
 
-/* credit goes to CSS tricks: https://css-tricks.com/overriding-default-button-styles/ */
 .presentation {
 
-        display: inline-block;
-        border: none;
-        padding: 1rem 2rem;
-        margin: 0;
-        text-decoration: none;
-        background: #13c463;
-        color: #080202;
-        font-family: sans-serif;
-        font-size: 1rem;
-        cursor: pointer;
+    background: linear-gradient(to right, #17E39B, #17E3E3);
+	color: white;
+	--width: 100px;
+	--height: calc(var(--width) / 3);
+	width: var(--width);
+	height: var(--height);
+	text-align: center;
+	line-height: var(--height);
+	font-size: calc(var(--height) / 2.5);
+	font-family: sans-serif;
+	letter-spacing: 0.2em;
+	border: 1px solid darkgoldenrod;
+	border-radius: 2em;
+	transform: perspective(500px) rotateY(-15deg);
+	text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
+    
+}
+
+.presentation:hover {
+
+    transform: perspective(500px) rotateY(15deg);
+	text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+    thead, tbody {
+        border: 2px solid black;
+        background-color: rgb(0, 7, 5);
+        color: white;
         text-align: center;
-        transition: background 250ms ease-in-out, 
-                    transform 150ms ease;
-        
-    }
-    
-    .presentation:hover,
-    .presentation:focus {
-        background: #0053ba;
-    }
-    
-    .presentation:focus {
-        outline: 1px solid #fff;
-        outline-offset: -4px;
-    }
-    
-    .presentation:active {
-        transform: scale(0.99);
+               
     }
 
-    .table {
-        border: 2px solid black;
-        background-color: aquamarine;
+    /* Special thanks to Comehop from codepen: https://codepen.io/comehope/pen/MGeRRO */
+
+    #edit, #delete {
+
+        color: black;
+        background: linear-gradient(to right, #17E39B, #17E3E3);
+	color: white;
+	--width: 100px;
+	--height: calc(var(--width) / 3);
+	width: var(--width);
+	height: var(--height);
+	text-align: center;
+	line-height: var(--height);
+	font-size: calc(var(--height) / 2.5);
+	font-family: sans-serif;
+	letter-spacing: 0.2em;
+	border: 1px solid darkgoldenrod;
+	border-radius: 2em;
+	transform: perspective(500px) rotateY(-15deg);
+	text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
     }
+
+    #edit:hover, #delete:hover {
+
+        transform: perspective(500px) rotateY(15deg);
+	text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #edit::before, #delete::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, white, transparent);
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    
+

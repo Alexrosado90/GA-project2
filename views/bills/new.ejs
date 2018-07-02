@@ -1,26 +1,24 @@
 <% include ../partials/header %>
 
-<h2> How much did you spend this month? </h2>
+<h2 style="color:white;background-color:black;"> How much did you spend this month? </h2>
 <div class="bill-container">
 <form action="/bills" method="POST">
 <label>Name</label>
-<input type="number" name="person_id" />
+<input type="number" name="person_id" /> </br>
 
 <input type="text" name="rent" placeholder='Rent' value='<%= bill.rent %>'/> </br>
 
-<input type="number" name="electric" placeholder='Electric' value='<%= bill.electric %>'/>
+<input type="number" name="electric" placeholder='Electric' value='<%= bill.electric %>'/> </br>
 
-<input type="number" name="car" placeholder='Car' value='<%= bill.electric %>'/>
+<input type="number" name="car" placeholder='Car' value='<%= bill.electric %>'/> </br>
 
-<input type="number" name="insurance" placeholder='Insurance' value='<%= bill.insurance %>'/>
+<input type="number" name="insurance" placeholder='Insurance' value='<%= bill.insurance %>'/> </br>
 
-<input type="number" name="food" placeholder='Food' value='<%= bill.food %>'/>
+<input type="number" name="food" placeholder='Food' value='<%= bill.food %>'/> </br>
 
-<input type="number" name="other" placeholder='Other' value='<%= bill.other %>'/>
+<input type="number" name="other" placeholder='Other' value='<%= bill.other %>'/> </br>
 
 <button type="submit">Enter bills</button>
 </form>
 </div>
 
-</body>
-</html>
