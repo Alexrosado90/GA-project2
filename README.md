@@ -5,19 +5,19 @@
 This project has people and bills tables.
 
 ## People
-name
-age
-estimate monthly income
+- name
+- age
+- estimate monthly income
 
 ## Bills
 
-rent
-electric
-car
-insurance
-food
-other
-person_id
+- rent
+- electric
+- car
+- insurance
+- food
+- other
+- person_id
 
 ## Technologies used
 
@@ -33,7 +33,7 @@ Node Modules:
 - `moment`
 - 'method-override'
 
-##personal achievment
+## Personal achievment
 
 app.put('/bills/:id', (req,res) => {
     const updatedBill = req.body
@@ -45,7 +45,7 @@ app.put('/bills/:id', (req,res) => {
 
 ## Plans for the future
 
--Multiple usernames
--Total expenses(month and year)
--Small errors fine tuned
--Add a graph per user for the year
+- Multiple usernames
+- Total expenses(month and year)
+- Small errors fine tuned
+- Add a graph per user for the year
