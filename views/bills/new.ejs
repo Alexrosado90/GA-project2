@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-<h2 style="color:white;background-color:black;"> How much did you spend this month? </h2>
+<h2 style="color:white;font-family: 'Vast Shadow', cursive;"> How much did you spend this month? </h2>
 <div class="bill-container">
 <form action="/bills" method="POST">
 <label>Name</label>
@@ -18,7 +18,8 @@
 
 <input type="number" name="other" placeholder='Other' value='<%= bill.other %>'/> </br>
 
-<button type="submit">Enter bills</button>
+<button class="create" type="submit">Create</button>
 </form>
 </div>
 
+ <% include ../partials/footer %>

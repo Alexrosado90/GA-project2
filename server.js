@@ -72,7 +72,7 @@ app.get('/bills/:id/edit', (req, res) => {
         })
     ])
     .then(([bill, person]) => {
-        console.log('this is bill ', bill)
+    
         res.render('bills/edit', {bill: bill, person: person})
     })
 })
