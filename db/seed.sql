@@ -1,4 +1,4 @@
-\c monthlyexpenses
+--\c monthlyexpenses
 
 DELETE FROM people;
 DELETE FROM bills;

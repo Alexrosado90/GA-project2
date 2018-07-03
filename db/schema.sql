@@ -1,6 +1,6 @@
-CREATE DATABASE monthlyexpenses;
+--CREATE DATABASE monthlyexpenses;
 
-\c monthlyexpenses
+--\c monthlyexpenses
 
 DROP TABLE IF EXISTS people;
 DROP TABLE IF EXISTS bills;
