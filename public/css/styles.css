@@ -140,7 +140,7 @@ body {
 	box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
     }
     
-    .edit {
+    .fix {
 
         background: linear-gradient(to right, #17E39B, #17E3E3);
 	color: white;
@@ -164,7 +164,7 @@ body {
     font-family: 'Vast Shadow', cursive;
     }
 
-    .edit:hover {
+    .fix:hover {
 
         transform: perspective(500px) rotateY(15deg);
 	text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);

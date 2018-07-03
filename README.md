@@ -19,6 +19,10 @@ This project has people and bills tables.
 - other
 - person_id
 
+## About the app
+
+The purpose of this is app is to be able to calculate your total expenses for the month. You'll have a chance to create multiple tables representing a seperate month.
+
 ## Technologies used
 
 `npm init`
